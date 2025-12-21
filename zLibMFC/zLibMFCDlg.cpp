@@ -160,7 +160,7 @@ BOOL CzLibMFCDlg::PreTranslateMessage(MSG* pMsg)
 
 	else if(pMsg->message == WM_COMPRESSOR_PROGRESS || pMsg->message == WM_DECOMPRESSOR_PROGRESS)
 	{
-		m_prgBarMain.SetPos(pMsg->wParam);
+		m_prgBarMain.SetPos((int)pMsg->wParam);
 		CString strProgress;
 		strProgress.Format(_T("zLibMFC [%ld %%]"), pMsg->wParam);
 		SetWindowText(strProgress);
